@@ -1,0 +1,144 @@
+/* removes all formatting by the browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: antiquewhite;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1rem;
+}
+
+/* centering */
+header, form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input, form button {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  background: white;
+  color: burlywood;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: white;
+  color: darkgoldenrod;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* this is the ul containing all the todos */
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+/* div containing a singular li and two buttons */
+.todo-div {
+  background: white;
+  margin: 0.5rem;
+  font-size: 0.9rem;
+  display: flex; /* so that all the items fall next to each other */
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease; /* check button changes todo-div */
+}
+
+/* push the bottons to the right of the li */
+.todo-div li {
+  flex: 1;
+  padding: 0rem 0.5rem;
+}
+
+.todo-check-button, .todo-trash-button {
+  background: white;
+  color: burlywood;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.todo-check-button:hover {
+  color: green;
+}
+.todo-trash-button:hover {
+  color: crimson;
+}
+
+/* these are the two button icons for each todo */
+.fa-check, .fa-trash {
+  pointer-events: none; /* we can click on button underneath */
+} 
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(8rem);
+  opacity: 0;
+}
+
+/* remove default settings */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select { /* div that contains select */
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: burlywood;
+  width: 9rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  background: white;
+  color: burlywood;
+  top: 0;
+  right: 0;
+  padding: 0.4rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+select:hover, .select:hover::after {
+  color: darkgoldenrod;
+}
