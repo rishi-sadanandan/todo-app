@@ -179,4 +179,5 @@ function getTodos() {
 function clearLocalStorage() {
   const todos = [];
   localStorage.setItem("todos", JSON.stringify(todos));
+  window.location.reload();
 }
